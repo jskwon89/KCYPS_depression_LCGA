@@ -293,7 +293,6 @@ ax.set_ylim(1.0, 3.0)
 ax.set_xlim(0.7, 7.6)
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS, 'Figure1_LCGA_trajectories_9item.png'), dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(FIGS, 'Figure1_LCGA_trajectories_9item.pdf'), bbox_inches='tight')
 plt.close()
 print('Figure 1 saved')
 
@@ -331,7 +330,6 @@ ax.set_xticks(range(1, 8)); ax.legend(fontsize=9, loc='lower left'); ax.grid(alp
 plt.suptitle('Figure 2. Suicidal ideation by 9-item depression trajectory class (PRIMARY)', fontsize=14, weight='bold')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS, 'Figure2_suicidal_ideation_9item.png'), dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(FIGS, 'Figure2_suicidal_ideation_9item.pdf'), bbox_inches='tight')
 plt.close()
 print('Figure 2 saved')
 
@@ -369,7 +367,6 @@ cbar = plt.colorbar(im, ax=ax, fraction=0.04)
 cbar.set_label('z-score (deviation from grand mean)')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS, 'Figure3_baseline_heatmap_9item.png'), dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(FIGS, 'Figure3_baseline_heatmap_9item.pdf'), bbox_inches='tight')
 plt.close()
 print('Figure 3 saved')
 
@@ -408,7 +405,6 @@ ax.set_title('Figure 4. BCH-corrected ORs and Cox HRs (9-item primary)', fontsiz
 ax.grid(alpha=0.3, which='both')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS, 'Figure4_distal_forest_9item.png'), dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(FIGS, 'Figure4_distal_forest_9item.pdf'), bbox_inches='tight')
 plt.close()
 print('Figure 4 saved')
 
@@ -435,7 +431,6 @@ ax.grid(alpha=0.3)
 plt.suptitle('Figure 5. LCGA model fit indices (9-item primary)', fontsize=13, weight='bold')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS, 'Figure5_fit_indices_9item.png'), dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(FIGS, 'Figure5_fit_indices_9item.pdf'), bbox_inches='tight')
 plt.close()
 print('Figure 5 saved')
 
@@ -452,7 +447,6 @@ ax.set_title('Figure 6. Time-varying class hazard ratios for first strong SI\n(C
 ax.set_xticks(range(1, 8)); ax.legend(loc='upper right'); ax.grid(alpha=0.3, which='both')
 plt.tight_layout()
 plt.savefig(os.path.join(FIGS, 'Figure6_time_varying_HR_9item.png'), dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(FIGS, 'Figure6_time_varying_HR_9item.pdf'), bbox_inches='tight')
 plt.close()
 print('Figure 6 saved')
 

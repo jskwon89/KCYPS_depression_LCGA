@@ -181,8 +181,6 @@ ax.grid(alpha=0.3, which='both')
 plt.tight_layout()
 plt.savefig(os.path.join(P9, 'figures', 'Figure6_time_varying_HR_9item_BOOT.png'),
             dpi=600, bbox_inches='tight')
-plt.savefig(os.path.join(P9, 'figures', 'Figure6_time_varying_HR_9item_BOOT.pdf'),
-            bbox_inches='tight')
 plt.close()
 print(f'\nSaved Figure 6 BOOT to figures/')
 print('Cluster bootstrap done.')

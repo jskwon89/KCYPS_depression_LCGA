@@ -44,11 +44,9 @@ pub_theme <- theme_classic(base_size = 11, base_family = 'sans') +
   )
 
 save_pub <- function(p, name, w = 8, h = 5.5) {
-  # 600 dpi for both raster formats; vector PDF for unlimited zoom
+  # 600 dpi raster formats only (PDF dropped per writer request)
   ggsave(file.path(FIGS, paste0(name, '.png')), p, width = w, height = h,
          dpi = 600, bg = 'white')
-  ggsave(file.path(FIGS, paste0(name, '.pdf')), p, width = w, height = h,
-         device = cairo_pdf, bg = 'white')
   ggsave(file.path(FIGS, paste0(name, '.tiff')), p, width = w, height = h,
          dpi = 600, bg = 'white', compression = 'lzw')
 }
@@ -280,8 +278,6 @@ p2_final <- cowplot::plot_grid(
 
 ggsave(file.path(FIGS, 'Figure2_suicidal_ideation_R.png'),
        p2_final, width = 16, height = 6, dpi = 600, bg = 'white')
-ggsave(file.path(FIGS, 'Figure2_suicidal_ideation_R.pdf'),
-       p2_final, width = 16, height = 6, device = cairo_pdf, bg = 'white')
 ggsave(file.path(FIGS, 'Figure2_suicidal_ideation_R.tiff'),
        p2_final, width = 16, height = 6, dpi = 600, bg = 'white',
        compression = 'lzw')
@@ -366,8 +362,6 @@ p5 <- (p5a + p5b) +
     theme = theme(plot.title = element_text(face = 'bold', size = 14)))
 ggsave(file.path(FIGS, 'Figure5_fit_indices_R.png'), p5,
        width = 12, height = 5, dpi = 600, bg = 'white')
-ggsave(file.path(FIGS, 'Figure5_fit_indices_R.pdf'), p5,
-       width = 12, height = 5, device = cairo_pdf, bg = 'white')
 ggsave(file.path(FIGS, 'Figure5_fit_indices_R.tiff'), p5,
        width = 12, height = 5, dpi = 600, bg = 'white', compression = 'lzw')
 cat('Figure 5 (R) saved.\n')

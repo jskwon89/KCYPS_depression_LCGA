@@ -24,15 +24,12 @@ PaperA_LCGA/
 │  ├─ Table5_BCH_distal_outcomes_9item.csv
 │  ├─ Table6_cox_HR_9item.csv             (cluster-bootstrap 기반)
 │  └─ Table6b_cox_HR_per_wave_full_9item.csv (보충 supplement)
-├─ 03_figures/                            출판 품질 그림
+├─ 03_figures/                            출판 품질 그림 (600 dpi)
 │  ├─ README_FIGURES.md                   ⭐ figure 사용 가이드 + caption 초안
-│  ├─ R_ggplot2/                          ⭐⭐ 투고용 — R/ggplot2 버전 사용 권장
-│  │  ├─ Figure1_LCGA_trajectories_R.{png,pdf,tiff}     (600 dpi PNG, vector PDF, 300 dpi TIFF)
-│  │  ├─ Figure2_suicidal_ideation_R.{png,pdf,tiff}
-│  │  ├─ Figure5_fit_indices_R.{png,pdf,tiff}
-│  │  └─ Figure6_time_varying_HR_R.{png,pdf,tiff}
-│  └─ (Python matplotlib 버전 — 초안 검토용)
-│     Figure1_..._9item.{png,pdf}, Figure2..6 동일
+│  ├─ R_ggplot2/                          ⭐⭐ 투고용 — R/ggplot2 600 dpi (Figure 1-6 전체)
+│  │  └─ Figure1..6_*_R.{png,tiff}        12개 (6 figures × 2 formats)
+│  └─ (Python matplotlib 600 dpi PNG — 초안 검토용)
+│     Figure1..6_*_9item.png
 ├─ 04_results_data/                       모든 통계 결과 raw CSV
 │  ├─ class_assignments_K4_9item.csv      개인별 class 할당 + posterior probs
 │  ├─ class_profiles_K4_9item.csv         4개 class trajectory parameters
