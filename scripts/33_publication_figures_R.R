@@ -44,12 +44,13 @@ pub_theme <- theme_classic(base_size = 11, base_family = 'sans') +
   )
 
 save_pub <- function(p, name, w = 8, h = 5.5) {
+  # 600 dpi for both raster formats; vector PDF for unlimited zoom
   ggsave(file.path(FIGS, paste0(name, '.png')), p, width = w, height = h,
          dpi = 600, bg = 'white')
   ggsave(file.path(FIGS, paste0(name, '.pdf')), p, width = w, height = h,
          device = cairo_pdf, bg = 'white')
   ggsave(file.path(FIGS, paste0(name, '.tiff')), p, width = w, height = h,
-         dpi = 300, bg = 'white', compression = 'lzw')
+         dpi = 600, bg = 'white', compression = 'lzw')
 }
 
 # ============================================================
@@ -282,7 +283,7 @@ ggsave(file.path(FIGS, 'Figure2_suicidal_ideation_R.png'),
 ggsave(file.path(FIGS, 'Figure2_suicidal_ideation_R.pdf'),
        p2_final, width = 16, height = 6, device = cairo_pdf, bg = 'white')
 ggsave(file.path(FIGS, 'Figure2_suicidal_ideation_R.tiff'),
-       p2_final, width = 16, height = 6, dpi = 300, bg = 'white',
+       p2_final, width = 16, height = 6, dpi = 600, bg = 'white',
        compression = 'lzw')
 cat('Figure 2 (R) saved.\n')
 
@@ -368,8 +369,171 @@ ggsave(file.path(FIGS, 'Figure5_fit_indices_R.png'), p5,
 ggsave(file.path(FIGS, 'Figure5_fit_indices_R.pdf'), p5,
        width = 12, height = 5, device = cairo_pdf, bg = 'white')
 ggsave(file.path(FIGS, 'Figure5_fit_indices_R.tiff'), p5,
-       width = 12, height = 5, dpi = 300, bg = 'white', compression = 'lzw')
+       width = 12, height = 5, dpi = 600, bg = 'white', compression = 'lzw')
 cat('Figure 5 (R) saved.\n')
 
+# ============================================================
+# Figure 3 — Baseline (W1) covariate z-score heatmap by class
+# ============================================================
+covars <- c('parent_warmth', 'parent_reject', 'parent_coerce', 'parent_chaos',
+            'parent_autonomy', 'parent_structure', 'peer_attach', 'teacher_rel',
+            'self_esteem', 'life_sat', 'happy', 'grit', 'depression9', 'somatic',
+            'aggression', 'withdrawal', 'attention', 'sm_addiction')
+covar_labels <- c(
+  'parent_warmth'   = 'Parent: Warmth',
+  'parent_reject'   = 'Parent: Rejection',
+  'parent_coerce'   = 'Parent: Coercion',
+  'parent_chaos'    = 'Parent: Chaos',
+  'parent_autonomy' = 'Parent: Autonomy',
+  'parent_structure'= 'Parent: Structure',
+  'peer_attach'     = 'Peer attachment',
+  'teacher_rel'     = 'Teacher relationship',
+  'self_esteem'     = 'Self-esteem',
+  'life_sat'        = 'Life satisfaction',
+  'happy'           = 'Subjective happiness',
+  'grit'            = 'Grit',
+  'depression9'     = 'Depression (9-item) W1',
+  'somatic'         = 'Somatic symptoms',
+  'aggression'      = 'Aggression',
+  'withdrawal'      = 'Social withdrawal',
+  'attention'       = 'Attention problems',
+  'sm_addiction'    = 'Smartphone dependence')
+
+# Read W1 data with covariates from Python long_panel via .dta directly
+df1 <- read_dta(file.path(ROOT, 'KCYPS2018m1Yw1.dta'))
+# Compute scale composites for W1 (mirrors 06_build_long_panel.py)
+score_scale <- function(d, items, reverse = NULL, lo = 1, hi = 4, mode = NULL) {
+  m <- as.data.frame(d[, items])
+  m[m < 1 | m > hi | m > 90] <- NA
+  if (!is.null(reverse) && length(reverse) > 0) {
+    for (i in reverse) m[, i] <- (lo + hi) - m[, i]
+  }
+  n_obs <- rowSums(!is.na(m))
+  ifelse(n_obs >= max(2, ncol(m) %/% 2), rowMeans(m, na.rm = TRUE), NA_real_)
+}
+
+w1_score <- data.frame(ID = df1$ID)
+w1_score$parent_warmth <- score_scale(df1, sprintf('YFAM2A%02dw1', 1:4))
+w1_score$parent_reject <- score_scale(df1, sprintf('YFAM2B%02dw1', 1:4))
+w1_score$parent_autonomy <- score_scale(df1, sprintf('YFAM2C%02dw1', 1:4))
+w1_score$parent_coerce <- score_scale(df1, sprintf('YFAM2D%02dw1', 1:4))
+w1_score$parent_structure <- score_scale(df1, sprintf('YFAM2E%02dw1', 1:4))
+w1_score$parent_chaos <- score_scale(df1, sprintf('YFAM2F%02dw1', 1:4))
+w1_score$peer_attach <- score_scale(df1, sprintf('YEDU2A%02dw1', 1:13),
+                                      reverse = 9:13)
+w1_score$teacher_rel <- score_scale(df1, sprintf('YEDU3A%02dw1', 1:14))
+w1_score$self_esteem <- score_scale(df1, sprintf('YPSY3A%02dw1', 1:10),
+                                      reverse = c(2, 5, 6, 8, 9))
+w1_score$life_sat <- score_scale(df1, sprintf('YPSY1A0%dw1', 1:5))
+w1_score$happy <- score_scale(df1, sprintf('YPSY2A0%dw1', 1:4),
+                                reverse = 4, lo = 1, hi = 7)
+w1_score$grit <- score_scale(df1, sprintf('YPSY7A0%dw1', 1:8),
+                              reverse = c(1, 3, 5, 6), lo = 1, hi = 5)
+w1_score$depression9 <- score_scale(df1, sprintf('YPSY4E%02dw1', items_9))
+w1_score$somatic <- score_scale(df1, sprintf('YPSY4C%02dw1', 1:8))
+w1_score$aggression <- score_scale(df1, sprintf('YPSY4B%02dw1', 1:6))
+w1_score$withdrawal <- score_scale(df1, sprintf('YPSY4D%02dw1', 1:5))
+w1_score$attention <- score_scale(df1, sprintf('YPSY4A%02dw1', 1:7))
+w1_score$sm_addiction <- score_scale(df1, sprintf('YMDA1C%02dw1', 1:15),
+                                       reverse = c(5, 10, 15))
+
+w1m <- w1_score %>%
+  inner_join(class_assign %>% select(ID, class_K4), by = 'ID') %>%
+  mutate(class_label = factor(case_when(
+    class_K4 == 1 ~ 'C1 Stable-Low',
+    class_K4 == 2 ~ 'C2 Persistent-High',
+    class_K4 == 3 ~ 'C3 Decreasing',
+    class_K4 == 4 ~ 'C4 Late-Increasing'),
+    levels = class_levels))
+
+# Compute z-score per covariate, then class means
+z_long <- w1m %>%
+  mutate(across(all_of(covars), ~ scale(.)[, 1])) %>%
+  pivot_longer(all_of(covars), names_to = 'covar', values_to = 'z') %>%
+  group_by(class_label, covar) %>%
+  summarise(z_mean = mean(z, na.rm = TRUE), .groups = 'drop') %>%
+  mutate(covar_label = factor(covar_labels[covar], levels = rev(covar_labels)))
+
+p3 <- ggplot(z_long, aes(x = class_label, y = covar_label, fill = z_mean)) +
+  geom_tile(color = 'white', linewidth = 0.4) +
+  geom_text(aes(label = sprintf('%+.2f', z_mean),
+                color = abs(z_mean) > 0.5),
+            size = 3.2, fontface = 'bold') +
+  scale_fill_gradient2(low = '#1f4d7a', mid = 'white', high = '#a3211a',
+                        midpoint = 0, limits = c(-1, 1),
+                        oob = scales::squish,
+                        name = 'z-score') +
+  scale_color_manual(values = c(`TRUE` = 'white', `FALSE` = 'black'),
+                      guide = 'none') +
+  scale_x_discrete(labels = c('C1\nStable-Low', 'C2\nPersistent-High',
+                                'C3\nDecreasing', 'C4\nLate-Increasing')) +
+  labs(title = 'Figure 3. Baseline (W1) z-score profile by trajectory class',
+       subtitle = 'Cell value = (class mean − grand mean) / SD',
+       x = NULL, y = NULL) +
+  pub_theme +
+  theme(panel.grid = element_blank(),
+        legend.position = 'right',
+        axis.line = element_blank(),
+        axis.ticks = element_blank())
+
+save_pub(p3, 'Figure3_baseline_heatmap_R', w = 8, h = 9)
+cat('Figure 3 (R) saved.\n')
+
+# ============================================================
+# Figure 4 — BCH-corrected ORs and Cox HRs forest plot
+# ============================================================
+or_any <- read_csv(file.path(P9, 'bch', 'bch_suic_any_OR.csv'),
+                    show_col_types = FALSE) %>%
+  mutate(group = 'Suicidal ideation any (BCH OR, W7)')
+or_strong <- read_csv(file.path(P9, 'bch', 'bch_suic_strong_OR.csv'),
+                       show_col_types = FALSE) %>%
+  mutate(group = 'Suicidal ideation strong (BCH OR, W7)')
+cox_hr <- read_csv(file.path(P9, 'long_distal', 'cox_HR_class_9item.csv'),
+                    show_col_types = FALSE) %>%
+  rename(label = `...1`) %>%
+  mutate(class = case_when(
+    grepl('c2', label) ~ 2L, grepl('c3', label) ~ 3L, grepl('c4', label) ~ 4L),
+    OR_vs_ref = HR, CI_lo = HR_lower, CI_hi = HR_upper,
+    group = 'Time to strong SI (Cox HR, average)') %>%
+  select(class, OR_vs_ref, CI_lo, CI_hi, group)
+
+# Combine
+forest_df <- bind_rows(or_any, or_strong, cox_hr) %>%
+  mutate(class_label = factor(case_when(
+    class == 2 ~ 'C2 Persistent-High',
+    class == 3 ~ 'C3 Decreasing',
+    class == 4 ~ 'C4 Late-Increasing'),
+    levels = class_levels[2:4]),
+    label = paste0(group, ': ', class_label, ' vs C1'),
+    group_short = factor(group, levels = c(
+      'Suicidal ideation any (BCH OR, W7)',
+      'Suicidal ideation strong (BCH OR, W7)',
+      'Time to strong SI (Cox HR, average)'))) %>%
+  arrange(group_short, class_label) %>%
+  mutate(label = factor(label, levels = rev(label)))
+
+p4 <- ggplot(forest_df, aes(x = OR_vs_ref, y = label, color = class_label)) +
+  geom_vline(xintercept = 1, linetype = 'dashed', color = 'grey50') +
+  geom_errorbarh(aes(xmin = CI_lo, xmax = CI_hi), height = 0.25, linewidth = 0.8) +
+  geom_point(size = 3.5, shape = 21, fill = 'white', stroke = 1.5) +
+  scale_color_manual(values = class_colors[2:4]) +
+  scale_x_log10(breaks = c(0.5, 1, 2, 5, 10, 20, 50, 100, 500),
+                labels = c('0.5', '1', '2', '5', '10', '20', '50', '100', '500')) +
+  facet_grid(group_short ~ ., scales = 'free_y', space = 'free_y',
+              switch = 'y') +
+  labs(title = 'Figure 4. BCH-corrected odds ratios and Cox hazard ratios',
+       subtitle = 'Reference: C1 Stable-Low; effects on log scale',
+       x = 'Effect size (OR or HR), log scale',
+       y = NULL, color = NULL,
+       caption = 'BCH bootstrap CI is 2.5/97.5 percentile of B=2,000 nonparametric resamples.') +
+  pub_theme +
+  theme(legend.position = 'top',
+        strip.placement = 'outside',
+        strip.text.y.left = element_text(angle = 0, hjust = 0, face = 'bold'),
+        panel.spacing = unit(0.4, 'lines'))
+
+save_pub(p4, 'Figure4_distal_forest_R', w = 11, h = 7)
+cat('Figure 4 (R) saved.\n')
+
 cat('\nAll R/ggplot2 figures saved to:', FIGS, '\n')
-cat('Formats: PNG (600 dpi), PDF (vector), TIFF (300 dpi LZW for journal upload)\n')
+cat('Formats: PNG 600 dpi, vector PDF (Cairo), TIFF 600 dpi LZW\n')

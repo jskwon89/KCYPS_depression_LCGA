@@ -2,10 +2,10 @@
 
 ## ⭐ 투고용 Primary: `R_ggplot2/` 사용
 
-작성담당자께: 투고 시에는 **`R_ggplot2/` 폴더 안의 R/ggplot2 버전**을 사용해주세요.
-- **600 dpi PNG** (rasterized for review)
+작성담당자께: 투고 시에는 **`R_ggplot2/` 폴더 안의 R/ggplot2 버전**을 사용해주세요. 모든 figure는 6종 (Figure 1-6) 모두 R로 생성됨.
+- **600 dpi PNG** (rasterized for review and supplement)
 - **vector PDF** (Cairo PDF, 폰트 임베드)
-- **300 dpi TIFF (LZW compressed)** ← JAD/Elsevier 본문 figure 업로드 표준
+- **600 dpi TIFF (LZW compressed)** ← JAD/Elsevier 본문 figure 업로드 표준 (300 dpi 이상 요구)
 
 R 버전이 publication 표준에 가까운 이유:
 1. ggplot2 그리드 시스템 + APA-friendly classic theme
@@ -19,24 +19,21 @@ R 버전이 publication 표준에 가까운 이유:
 ```
 03_figures/
 ├─ README_FIGURES.md                              (이 문서)
-├─ R_ggplot2/                                     ⭐⭐ 투고용 (R/ggplot2)
+├─ R_ggplot2/                                     ⭐⭐ 투고용 (R/ggplot2, 600 dpi)
 │  ├─ Figure1_LCGA_trajectories_R.{png,pdf,tiff}     trajectories + bootstrap CI
-│  ├─ Figure2_suicidal_ideation_R.{png,pdf,tiff}     SI rates + KM curve
+│  ├─ Figure2_suicidal_ideation_R.{png,pdf,tiff}     SI rates + KM curve (3-panel)
+│  ├─ Figure3_baseline_heatmap_R.{png,pdf,tiff}      W1 covariate z-score heatmap
+│  ├─ Figure4_distal_forest_R.{png,pdf,tiff}         BCH ORs + Cox HRs forest
 │  ├─ Figure5_fit_indices_R.{png,pdf,tiff}           BIC/aBIC/AIC + entropy
 │  └─ Figure6_time_varying_HR_R.{png,pdf,tiff}       Cox cluster bootstrap HR
-└─ (Python matplotlib 버전 6개 — 초안 검토용, 투고에는 사용 X)
+└─ (Python matplotlib 버전 6개 — 600 dpi 초안 검토용)
    ├─ Figure1_LCGA_trajectories_9item.{png,pdf}
    ├─ Figure2_suicidal_ideation_9item.{png,pdf}
-   ├─ Figure3_baseline_heatmap_9item.{png,pdf}      ⚠ R 버전 미생성 (필요 시 요청)
-   ├─ Figure4_distal_forest_9item.{png,pdf}         ⚠ R 버전 미생성 (필요 시 요청)
+   ├─ Figure3_baseline_heatmap_9item.{png,pdf}
+   ├─ Figure4_distal_forest_9item.{png,pdf}
    ├─ Figure5_fit_indices_9item.{png,pdf}
    └─ Figure6_time_varying_HR_9item_BOOT.{png,pdf}
 ```
-
-## R 버전 미생성 (필요 시 작성담당자가 요청)
-
-- **Figure 3** (baseline covariate heatmap by class): R `ggplot2 + geom_tile` 변환 가능, 30분 작업
-- **Figure 4** (BCH/Cox forest plot): R `ggforestplot` 또는 `ggplot2 + geom_pointrange`, 30분 작업
 
 ## 도형 설명 (Figure caption 초안)
 
