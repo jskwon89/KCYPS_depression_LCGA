@@ -1,0 +1,7 @@
+Notes for Table 6 / Table 6b (cluster-bootstrap Cox per-wave HRs)
+======================================================================
+Bootstrap B = 300.
+Add-one bootstrap p floor = 1/(B+1) = 1/301 = 0.00332
+At 3 decimal places this rounds to .003.
+Cells reading p=0.003 are at this floor; a planned supplementary B=1000 bootstrap would lower the floor to .000999.
+p-values larger than the floor are exact bootstrap two-sided percentile p-values.

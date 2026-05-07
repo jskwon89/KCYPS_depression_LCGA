@@ -1,0 +1,10 @@
+Weighted vs Unweighted LCGA (9-item) — Cohen kappa
+============================================================
+Weight column: WEIGHTB2w7 (KCYPS standardized longitudinal weight)
+N: 2452
+Raw (label-naive) kappa: 0.0339  [NOT RECOMMENDED — different label permutations]
+Hungarian label alignment (weighted -> unweighted): {np.int64(1): np.int64(1), np.int64(3): np.int64(2), np.int64(4): np.int64(3), np.int64(2): np.int64(4)}
+Post-alignment percent agreement: 0.9564
+Post-alignment Cohen kappa: 0.9391
+
+INTERPRETATION: post-alignment kappa reflects whether the 4-class structure is robust to differential attrition. Agreement >= .90 indicates strong robustness.

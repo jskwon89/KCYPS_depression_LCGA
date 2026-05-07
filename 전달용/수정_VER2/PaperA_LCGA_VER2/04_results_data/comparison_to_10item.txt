@@ -1,0 +1,5 @@
+9-item vs 10-item comparison
+Total individuals: 2452
+Hungarian label alignment (9-item label -> 10-item label): {np.int64(1): np.int64(2), np.int64(2): np.int64(4), np.int64(3): np.int64(3), np.int64(4): np.int64(1)}
+Post-alignment agreement: 0.9494
+Post-alignment Cohen kappa: 0.9292

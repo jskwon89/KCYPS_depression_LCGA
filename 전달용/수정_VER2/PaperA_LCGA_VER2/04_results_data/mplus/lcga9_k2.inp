@@ -1,0 +1,35 @@
+TITLE:
+  KCYPS 2018 m1 9-item depression LCGA K=2;
+
+DATA:
+  FILE IS kcyps_dep9.dat;
+
+VARIABLE:
+  NAMES ARE id y1 y2 y3 y4 y5 y6 y7;
+  USEVARIABLES ARE y1 y2 y3 y4 y5 y6 y7;
+  IDVARIABLE IS id;
+  MISSING ARE ALL (-999);
+  CLASSES = c(2);
+
+ANALYSIS:
+  TYPE = MIXTURE;
+  ESTIMATOR = ML;
+  STARTS = 1000 250;
+  STITERATIONS = 20;
+  PROCESSORS = 4;
+
+MODEL:
+  %OVERALL%
+    i s q | y1@-3 y2@-2 y3@-1 y4@0 y5@1 y6@2 y7@3;
+    i@0;
+    s@0;
+    q@0;
+    y1-y7 (resid);
+  %c#1%
+    [i s q];
+  %c#2%
+    [i s q];
+
+OUTPUT:
+  TECH1 TECH4 TECH8;
+
