@@ -23,6 +23,7 @@
 | 9 | **`30_cox_cluster_bootstrap.py`** ⭐ | **ID-level cluster bootstrap (B=300) — PRIMARY for §3.6** | `cox_HR_per_wave_with_CI_9item_BOOT.csv`, `Figure6_..._BOOT.{png,pdf}` |
 | 10 | `27_publication_outputs_9item.py` | Tables 1-5 + Figures 1-5 | `tables/`, `figures/` |
 | 11 | `32_rebuild_table6.py` | Table 6 / 6b (cluster bootstrap 기반, note row 자동 추가) | `tables/Table6*.csv`, `Table6_notes.txt` |
+| 12 | **`33_publication_figures_R.R`** ⭐ | **R/ggplot2 publication figures (투고용)** — 600dpi PNG / vector PDF / 300dpi TIFF | `figures_R/Figure1,2,5,6_*_R.{png,pdf,tiff}` |
 
 ## 의존성 그래프
 ```

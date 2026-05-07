@@ -49,11 +49,12 @@
 │  ├─ 23_bch_cox_9item.py                 BCH 3-step + Cox + Schoenfeld
 │  ├─ 25_weighted_sensitivity_9item.py    가중치 sensitivity
 │  ├─ 26_lcmm_9item.R                     R lcmm 재현
-│  ├─ 27_publication_outputs_9item.py     Tables 1-5 + Figures 1-5
+│  ├─ 27_publication_outputs_9item.py     Tables 1-5 + Figures 1-5 (Python matplotlib)
 │  ├─ 28_blrt_9item.py                    Bootstrap LRT
 │  ├─ 30_cox_cluster_bootstrap.py         ⭐ ID-level cluster bootstrap
 │  ├─ 31_lcmm_label_alignment.py          R lcmm ↔ manuscript label
-│  └─ 32_rebuild_table6.py                Table 6 / 6b (bootstrap 기반)
+│  ├─ 32_rebuild_table6.py                Table 6 / 6b (bootstrap 기반)
+│  └─ 33_publication_figures_R.R          ⭐ R/ggplot2 publication figures (투고용)
 │
 ├─ output/                                전체 분석 결과
 │  ├─ paperA_lcga/                        ⭐ Paper A 메인
@@ -63,7 +64,8 @@
 │  │  └─ primary_9item/                   9문항 primary 결과 (criterion-clean)
 │  │     ├─ class_assignments_K4_9item.csv
 │  │     ├─ tables/Table1..6.csv
-│  │     ├─ figures/Figure1..6.{png,pdf}
+│  │     ├─ figures/Figure1..6.{png,pdf}             (Python matplotlib, 초안)
+│  │     ├─ figures_R/Figure1,2,5,6_R.{png,pdf,tiff}  ⭐ R/ggplot2 (투고용)
 │  │     ├─ bch/, blrt/, long_distal/, sensitivity_weighted/, lcmm_R/
 │  │     └─ comparison_to_10item.txt
 │  ├─ paperB_riclpm/                      Smartphone × Depression RI-CLPM

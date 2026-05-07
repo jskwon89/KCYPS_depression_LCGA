@@ -24,13 +24,15 @@ PaperA_LCGA/
 │  ├─ Table5_BCH_distal_outcomes_9item.csv
 │  ├─ Table6_cox_HR_9item.csv             (cluster-bootstrap 기반)
 │  └─ Table6b_cox_HR_per_wave_full_9item.csv (보충 supplement)
-├─ 03_figures/                            출판 품질 그림 (PNG 300dpi + PDF)
-│  ├─ Figure1_LCGA_trajectories_9item.{png,pdf}
-│  ├─ Figure2_suicidal_ideation_9item.{png,pdf}
-│  ├─ Figure3_baseline_heatmap_9item.{png,pdf}
-│  ├─ Figure4_distal_forest_9item.{png,pdf}
-│  ├─ Figure5_fit_indices_9item.{png,pdf}
-│  └─ Figure6_time_varying_HR_9item_BOOT.{png,pdf}
+├─ 03_figures/                            출판 품질 그림
+│  ├─ README_FIGURES.md                   ⭐ figure 사용 가이드 + caption 초안
+│  ├─ R_ggplot2/                          ⭐⭐ 투고용 — R/ggplot2 버전 사용 권장
+│  │  ├─ Figure1_LCGA_trajectories_R.{png,pdf,tiff}     (600 dpi PNG, vector PDF, 300 dpi TIFF)
+│  │  ├─ Figure2_suicidal_ideation_R.{png,pdf,tiff}
+│  │  ├─ Figure5_fit_indices_R.{png,pdf,tiff}
+│  │  └─ Figure6_time_varying_HR_R.{png,pdf,tiff}
+│  └─ (Python matplotlib 버전 — 초안 검토용)
+│     Figure1_..._9item.{png,pdf}, Figure2..6 동일
 ├─ 04_results_data/                       모든 통계 결과 raw CSV
 │  ├─ class_assignments_K4_9item.csv      개인별 class 할당 + posterior probs
 │  ├─ class_profiles_K4_9item.csv         4개 class trajectory parameters
@@ -109,6 +111,7 @@ PaperA_LCGA/
 4. **BLRT p**: B=30, observed LRT 2,174.7, p=.032 (1/31 floor). 본문에서 "p<.001"로 쓰지 말 것 — add-one rule 위반.
 5. **Cox bootstrap p**: B=300, floor 1/301=.0033 → .003 (반올림). p=.003은 floor 명시 footnote 필수. p≤.003 같은 표현 금지.
 6. **숫자 인용 시**: `02_tables/`의 표 그대로 옮기지 말고, 표는 표대로 두고 본문은 narrative 형태로. 모든 수치는 `04_results_data/`에서 검증 가능.
+7. **그림 — 투고용은 R 버전 사용 필수**: `03_figures/R_ggplot2/`의 PNG (600 dpi), PDF (vector, 폰트 임베드), TIFF (300 dpi LZW)을 사용해주세요. Python matplotlib 버전은 초안 검토용입니다. JAD/Elsevier는 보통 TIFF (LZW) 또는 vector PDF를 권장. 상세는 `03_figures/README_FIGURES.md`에 figure caption 초안과 함께 정리.
 
 ---
 
