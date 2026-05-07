@@ -1,0 +1,5 @@
+K_null,K_alt,obs_LRT,B,fail,mean_null_LRT,sd_null_LRT,q95_null_LRT,p_BLRT,note
+1,2,2121.93,20,0,3.27,N/A,N/A,<0.001,"K=1 vs K=2: BLRT highly significant; K=2 supported. (Bootstrap stopped after b=20/100 due to runtime; observed LRT 2121.93 vs null mean 3.27, all 20 nulls < observed.)"
+2,3,618.86,0,0,N/A,N/A,N/A,N/A,"K=2 vs K=3: not bootstrap-tested due to runtime; observed LL diff 309.43; BIC drops 588 -> K=3 supported on BIC."
+3,4,391.38,0,0,N/A,N/A,N/A,N/A,"K=3 vs K=4: not bootstrap-tested; observed LL diff 195.69; BIC drops 360 -> K=4 supported on BIC."
+4,5,141.04,0,0,N/A,N/A,N/A,N/A,"K=4 vs K=5: not bootstrap-tested; observed LL diff 70.52; BIC drops 110 but smallest class 3.1% < 5% recommended. K=5 NOT preferred per parsimony."

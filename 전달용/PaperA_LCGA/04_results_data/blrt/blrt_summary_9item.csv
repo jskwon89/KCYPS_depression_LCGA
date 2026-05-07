@@ -1,0 +1,2 @@
+﻿K_null,K_alt,obs_LRT,B,fail,mean_null_LRT,sd_null_LRT,max_null_LRT,q95_null_LRT,p_BLRT,note
+1,2,2174.689388167015,30,0,3.741612654261068,2.5024204331614146,11.508855859312462,7.421955153116322,0.03225806451612903,9-item primary; B=30 parametric bootstrap; K>2 not bootstrapped (BIC-based decision)

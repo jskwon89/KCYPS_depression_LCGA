@@ -1,0 +1,7 @@
+﻿,depression_w7,depression_w7,depression_w7,life_sat_w7,life_sat_w7,life_sat_w7,self_esteem_w7,self_esteem_w7,self_esteem_w7,happy_w7,happy_w7,happy_w7,suic_any,suic_any,suic_any,suic_strong,suic_strong,suic_strong,off_count_w7,off_count_w7,off_count_w7,cyber_count_w7,cyber_count_w7,cyber_count_w7
+,mean,std,count,mean,std,count,mean,std,count,mean,std,count,mean,std,count,mean,std,count,mean,std,count,mean,std,count
+class_K4,,,,,,,,,,,,,,,,,,,,,,,,
+1,1.913,0.438,779,2.505,0.445,779,2.76,0.349,779,3.677,0.303,779,0.496,0.5,911,0.1,0.3,911,0.875,1.287,779,0.534,1.45,779
+2,1.281,0.366,525,2.702,0.538,525,3.112,0.416,525,3.809,0.427,525,0.135,0.341,617,0.018,0.132,617,1.025,1.392,525,0.371,1.047,525
+3,1.605,0.439,549,2.522,0.463,549,2.857,0.375,549,3.704,0.323,549,0.317,0.466,668,0.039,0.194,668,0.902,1.186,549,0.448,1.372,549
+4,2.085,0.57,217,2.357,0.492,217,2.673,0.37,217,3.567,0.383,217,0.504,0.501,256,0.113,0.318,256,1.088,1.1,217,0.318,0.736,217

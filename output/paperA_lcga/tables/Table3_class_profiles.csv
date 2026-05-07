@@ -1,0 +1,5 @@
+﻿Class,Class Label,Proportion (%),Intercept (β0),Linear slope (β1),Quadratic (β2),Mean W1,Mean W2,Mean W3,Mean W4,Mean W5,Mean W6,Mean W7
+1,C1 Late-Increasing,36.3,1.847,0.07,-0.016,1.489,1.641,1.76,1.847,1.9,1.921,1.91
+2,C2 Stable-Low,25.6,1.317,-0.014,0.008,1.434,1.379,1.34,1.317,1.312,1.322,1.349
+3,C3 Decreasing,27.2,1.885,-0.103,0.008,2.267,2.124,1.997,1.885,1.79,1.711,1.648
+4,C4 Persistent-High,10.9,2.559,-0.047,-0.038,2.361,2.502,2.568,2.559,2.474,2.314,2.078

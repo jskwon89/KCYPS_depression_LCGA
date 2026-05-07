@@ -1,0 +1,16 @@
+﻿outcome,model,auc_mean,auc_sd,ap_mean,brier_mean
+high_depression_w7,GradientBoosting,0.567,0.019,0.311,0.206
+high_depression_w7,LightGBM,0.55,0.013,0.307,0.233
+high_depression_w7,LogisticL1,0.557,0.029,0.317,0.196
+high_depression_w7,RandomForest,0.557,0.023,0.317,0.194
+high_depression_w7,XGBoost,0.571,0.028,0.319,0.205
+high_risk_trajectory_C1C4,GradientBoosting,0.642,0.01,0.615,0.242
+high_risk_trajectory_C1C4,LightGBM,0.634,0.018,0.604,0.27
+high_risk_trajectory_C1C4,LogisticL1,0.618,0.012,0.567,0.24
+high_risk_trajectory_C1C4,RandomForest,0.652,0.009,0.627,0.232
+high_risk_trajectory_C1C4,XGBoost,0.644,0.012,0.616,0.242
+suicidal_ideation_w7,GradientBoosting,0.564,0.018,0.395,0.235
+suicidal_ideation_w7,LightGBM,0.583,0.01,0.409,0.256
+suicidal_ideation_w7,LogisticL1,0.555,0.02,0.385,0.223
+suicidal_ideation_w7,RandomForest,0.592,0.019,0.422,0.219
+suicidal_ideation_w7,XGBoost,0.577,0.021,0.406,0.232

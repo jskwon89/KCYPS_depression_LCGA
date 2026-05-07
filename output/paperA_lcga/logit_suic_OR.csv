@@ -1,0 +1,6 @@
+﻿,OR,lower,upper,p
+Intercept,0.147,0.116,0.188,0.0
+"C(class_str, Treatment(reference=""2""))[T.1]",6.335,4.859,8.26,0.0
+"C(class_str, Treatment(reference=""2""))[T.3]",2.944,2.217,3.91,0.0
+"C(class_str, Treatment(reference=""2""))[T.4]",6.366,4.537,8.933,0.0
+female,1.139,0.955,1.358,0.148

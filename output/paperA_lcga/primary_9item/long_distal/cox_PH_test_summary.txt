@@ -1,0 +1,10 @@
+Schoenfeld residual proportional-hazards test
+Cox model: time-to-first-strong-suicidal-ideation by 9-item LCGA class
+Reference class: Stable-Low (class 1)
+
+    test_statistic       p  -log2(p)
+c2          0.5054  0.4772    1.0675
+c3         15.6530  0.0001   13.6819
+c4         18.8138  0.0000   16.0823
+
+Interpretation: PH assumption is supported if all p > .05.

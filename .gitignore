@@ -1,0 +1,34 @@
+# KCYPS 2018 raw data (proprietary, NYPI public-use; do not redistribute)
+*.dta
+*.zip
+KCYPS*UserGuide.pdf
+KCYPS*_Codebook.xlsx
+"[데이터]"*.txt
+
+# Large intermediate binary files
+*.rds
+*.npy
+*.parquet
+
+# Logs
+*.log
+output/**/run.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+~$*
+*_temp.*
+
+# Editor
+.vscode/
+.idea/
+
+# Background task outputs (transient)
+**/tasks/*.output

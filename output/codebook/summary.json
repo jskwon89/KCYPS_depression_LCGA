@@ -1,0 +1,307 @@
+{
+  "youth": {
+    "1": {
+      "n_rows": 2590,
+      "n_cols": 351,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw1",
+        "WEIGHTA1w1",
+        "WEIGHTA2w1",
+        "COHORTw1",
+        "ARA1Aw1",
+        "ARA2Aw1",
+        "ARA1Bw1",
+        "YTWINw1",
+        "YBRT1Aw1",
+        "YBRT1Bw1",
+        "YGENDERw1",
+        "YTIM1A01w1"
+      ],
+      "has_id": true
+    },
+    "2": {
+      "n_rows": 2590,
+      "n_cols": 379,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw2",
+        "WEIGHTA1w2",
+        "WEIGHTA2w2",
+        "WEIGHTB1w2",
+        "WEIGHTB2w2",
+        "SURVEY1w2",
+        "SURVEY2w2",
+        "COHORTw2",
+        "ARA1Aw2",
+        "ARA2Aw2",
+        "ARA1Bw2",
+        "YTWINw2"
+      ],
+      "has_id": true
+    },
+    "3": {
+      "n_rows": 2590,
+      "n_cols": 428,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw3",
+        "WEIGHTA1w3",
+        "WEIGHTA2w3",
+        "WEIGHTB1w3",
+        "WEIGHTB2w3",
+        "SURVEY1w3",
+        "SURVEY2w3",
+        "COHORTw3",
+        "YONLINEw3",
+        "ARA1Aw3",
+        "ARA2Aw3",
+        "ARA1Bw3"
+      ],
+      "has_id": true
+    },
+    "4": {
+      "n_rows": 2590,
+      "n_cols": 434,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw4",
+        "WEIGHTA1w4",
+        "WEIGHTA2w4",
+        "WEIGHTB1w4",
+        "WEIGHTB2w4",
+        "SURVEY1w4",
+        "SURVEY2w4",
+        "COHORTw4",
+        "ARA1Aw4",
+        "ARA2Aw4",
+        "ARA1Bw4",
+        "SCLTYPw4"
+      ],
+      "has_id": true
+    },
+    "5": {
+      "n_rows": 2590,
+      "n_cols": 436,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw5",
+        "WEIGHTA1w5",
+        "WEIGHTA2w5",
+        "WEIGHTB1w5",
+        "WEIGHTB2w5",
+        "SURVEY1w5",
+        "SURVEY2w5",
+        "COHORTw5",
+        "ARA1Aw5",
+        "ARA2Aw5",
+        "ARA1Bw5",
+        "SCLTYPw5"
+      ],
+      "has_id": true
+    },
+    "6": {
+      "n_rows": 2590,
+      "n_cols": 564,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw6",
+        "WEIGHTA1w6",
+        "WEIGHTA2w6",
+        "WEIGHTB1w6",
+        "WEIGHTB2w6",
+        "SURVEY1w6",
+        "SURVEY2w6",
+        "COHORTw6",
+        "ARA1Aw6",
+        "ARA2Aw6",
+        "ARA1Bw6",
+        "SCLTYPw6"
+      ],
+      "has_id": true
+    },
+    "7": {
+      "n_rows": 2590,
+      "n_cols": 472,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "SCLIDw7",
+        "WEIGHTA1w7",
+        "WEIGHTA2w7",
+        "WEIGHTB1w7",
+        "WEIGHTB2w7",
+        "SURVEY1w7",
+        "SURVEY2w7",
+        "COHORTw7",
+        "ARA1Aw7",
+        "ARA2Aw7",
+        "ARA1Bw7",
+        "SCLTYPw7"
+      ],
+      "has_id": true
+    }
+  },
+  "parent": {
+    "1": {
+      "n_rows": 2590,
+      "n_cols": 210,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PARENTw1",
+        "PYBRT1Aw1",
+        "PYBRT1Bw1",
+        "PYGENDERw1",
+        "PINCOMEw1",
+        "PINCOME1w1",
+        "PYBRP1w1",
+        "PYBRP2w1",
+        "PYBRP3w1",
+        "PBRP1w1",
+        "PBRP2w1",
+        "PBRP3w1"
+      ]
+    },
+    "2": {
+      "n_rows": 3628,
+      "n_cols": 197,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PARENTw2",
+        "PYBRT1Aw2",
+        "PYBRT1Bw2",
+        "PYGENDERw2",
+        "PINCOMEw2",
+        "PINCOME1w2",
+        "PYBRP1w2",
+        "PYBRP2w2",
+        "PYBRP3w2",
+        "PBRP1w2",
+        "PBRP2w2",
+        "PBRP3w2"
+      ]
+    },
+    "3": {
+      "n_rows": 3505,
+      "n_cols": 250,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PONLINEw3",
+        "PARENTw3",
+        "PYBRT1Aw3",
+        "PYBRT1Bw3",
+        "PYGENDERw3",
+        "PINCOMEw3",
+        "PINCOME1w3",
+        "PYBRP1w3",
+        "PYBRP2w3",
+        "PYBRP3w3",
+        "PBRP1w3",
+        "PBRP2w3"
+      ]
+    },
+    "4": {
+      "n_rows": 3438,
+      "n_cols": 242,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PARENTw4",
+        "PYBRT1Aw4",
+        "PYBRT1Bw4",
+        "PYGENDERw4",
+        "PINCOMEw4",
+        "PINCOME1w4",
+        "PYBRP1w4",
+        "PYBRP2w4",
+        "PYBRP3w4",
+        "PBRP1w4",
+        "PBRP2w4",
+        "PBRP3w4"
+      ]
+    },
+    "5": {
+      "n_rows": 3242,
+      "n_cols": 236,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PARENTw5",
+        "PYBRT1Aw5",
+        "PYBRT1Bw5",
+        "PYGENDERw5",
+        "PINCOMEw5",
+        "PINCOME1w5",
+        "PYBRP1w5",
+        "PYBRP2w5",
+        "PYBRP3w5",
+        "PBRP1w5",
+        "PBRP2w5",
+        "PBRP3w5"
+      ]
+    },
+    "6": {
+      "n_rows": 3346,
+      "n_cols": 238,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PARENTw6",
+        "PYBRT1Aw6",
+        "PYBRT1Bw6",
+        "PYGENDERw6",
+        "PINCOMEw6",
+        "PINCOME1w6",
+        "PYBRP1w6",
+        "PYBRP2w6",
+        "PYBRP3w6",
+        "PBRP1w6",
+        "PBRP2w6",
+        "PBRP3w6"
+      ]
+    },
+    "7": {
+      "n_rows": 3460,
+      "n_cols": 237,
+      "columns_first15": [
+        "ID",
+        "HID",
+        "PID",
+        "PARENTw7",
+        "PYBRT1Aw7",
+        "PYBRT1Bw7",
+        "PYGENDERw7",
+        "PINCOMEw7",
+        "PINCOME1w7",
+        "PYBRP1w7",
+        "PYBRP2w7",
+        "PYBRP3w7",
+        "PBRP1w7",
+        "PBRP2w7",
+        "PBRP3w7"
+      ]
+    }
+  }
+}

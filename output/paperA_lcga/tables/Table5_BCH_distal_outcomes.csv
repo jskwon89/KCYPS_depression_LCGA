@@ -1,0 +1,21 @@
+﻿Outcome (W7),Statistic
+"Suicidal ideation (any, ≥2)",BCH-corrected proportion [95% CI]
+  C1 Late-Increasing,"57.5% [53.2, 62.3]    OR = 17.11 [10.74, 33.94]"
+  C2 Stable-Low,"7.3% [4.0, 10.7]    1.00 (ref)"
+  C3 Decreasing,"26.4% [21.4, 31.3]    OR = 4.53 [2.76, 8.80]"
+  C4 Persistent-High,"53.3% [45.8, 61.1]    OR = 14.42 [8.64, 28.47]"
+"Suicidal ideation (strong, ≥3)",BCH-corrected proportion [95% CI]
+  C1 Late-Increasing,"12.2% [9.7, 15.1]    OR = 30.75 [6.41, 418.21]"
+  C2 Stable-Low,"0.4% [-0.7, 1.9]    1.00 (ref)"
+  C3 Decreasing,"1.8% [-0.2, 4.1]    OR = 4.16 [0.26, 62.61]"
+  C4 Persistent-High,"12.6% [8.1, 17.5]    OR = 31.83 [6.45, 426.17]"
+Depression score (1-4),BCH-corrected mean [95% CI]
+  C1 Late-Increasing,"2.05 [2.00, 2.09]"
+  C2 Stable-Low,"1.17 [1.13, 1.21]"
+  C3 Decreasing,"1.49 [1.44, 1.55]"
+  C4 Persistent-High,"2.16 [2.07, 2.25]"
+Life satisfaction (1-4),BCH-corrected mean [95% CI]
+  C1 Late-Increasing,"2.48 [2.44, 2.52]"
+  C2 Stable-Low,"2.74 [2.68, 2.79]"
+  C3 Decreasing,"2.53 [2.48, 2.59]"
+  C4 Persistent-High,"2.33 [2.25, 2.40]"
